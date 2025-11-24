@@ -70,7 +70,7 @@ useEffect(() => {
 
   const fetchReviews = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/reviews?lot_id=${selectedPlace._id}`);
+      const res = await fetch(`https://parking-management-system-client-backend.onrender.com/api/reviews?lot_id=${selectedPlace._id}`);
       const data = await res.json();
       setReviews(data);
     } catch (err) {
@@ -103,7 +103,7 @@ useEffect(() => {
  useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/tasks");
+        const res = await fetch("https://parking-management-system-vendor-backend.onrender.com/api/tasks");
         if (!res.ok) throw new Error("Failed to fetch places");
         const data = await res.json();
         setPlaces(data); // assuming API returns array of Place objects
@@ -121,7 +121,7 @@ const [orders, setOrders] = useState<Order[]>([]); // replace hardcoded array
 useEffect(() => {
   const fetchOrders = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/payment/orders");
+      const res = await fetch("https://parking-management-system-client-backend.onrender.com/api/payment/orders");
       if (!res.ok) throw new Error("Failed to fetch orders");
       const data: Order[] = await res.json();
       setOrders(data);
@@ -140,7 +140,7 @@ useEffect(() => {
 const makePayment = async () => {
   if (!selectedPlace) return;
  console.log(selectedPlace._id);
-  const response = await fetch("http://localhost:5000/api/payment/create-checkout-session", {
+  const response = await fetch("https://parking-management-system-client-backend.onrender.com/api/payment/create-checkout-session", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -525,7 +525,7 @@ if (loading) {
         const rating = parseInt((form.elements.namedItem("rating") as HTMLSelectElement).value);
 
         try {
-          await fetch("http://localhost:5000/api/reviews/", {
+          await fetch("https://parking-management-system-client-backend.onrender.com/api/reviews/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({

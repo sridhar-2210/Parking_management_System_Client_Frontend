@@ -537,7 +537,7 @@ if (loading) {
           });
 
           // Refetch reviews after POST
-          const res = await fetch(`http://localhost:5000/api/reviews?lot_id=${selectedPlace._id}`);
+          const res = await fetch(`https://parking-management-system-client-backend.onrender.com/api/reviews?lot_id=${selectedPlace._id}`);
           const updatedReviews = await res.json();
           setReviews(updatedReviews);
 

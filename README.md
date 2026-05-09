@@ -3,7 +3,10 @@
 The user-facing side of the Parking Management System. This mobile-responsive web application allows drivers to find available parking spots in real-time, manage their vehicle bookings, and handle payments through a sleek, intuitive interface.
 
 ---
+## 🚀 Live Demo
+[**Click here to explore the live app**](https://parking-management-system-client-fr.vercel.app/)
 
+---
 ## ✨ Key Features
 
 - **Smart Slot Discovery:** Real-time search and visualization of available parking lots based on location.
